@@ -1,0 +1,14 @@
+/* pages/template/template.wxss */
+page{
+	min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f0f0f0;
+}
+
+.px-30{
+  padding: 0 30rpx;
+}
+.text{
+  padding-top: 20rpx;
+}

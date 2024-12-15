@@ -1,0 +1,15 @@
+{
+  "name": "ai-creator",
+  "version": "1.0.0",
+  "description": "",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vant/weapp": "^1.11.7",
+    "spa-custom-hooks": "^1.4.2"
+  }
+}

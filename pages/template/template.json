@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "van-button": "@vant/weapp/button/index"
+  },
+  "navigationBarBackgroundColor": "#b1c9f9",
+  "navigationBarTitleText": "选择模板"
+}

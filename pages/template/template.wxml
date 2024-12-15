@@ -1,0 +1,6 @@
+<!--pages/template/template.wxml-->
+<view class="flex col-column px-30">
+	<view class="text">
+		
+	</view>
+</view>

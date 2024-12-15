@@ -1,0 +1,155 @@
+/**index.wxss**/
+page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f0f0f0;
+}
+.px-30{
+  padding: 0 30rpx;
+}
+.w-100{
+  width: 100%;
+}
+.h-100{
+  height: 100%;
+}
+.share-wrap{
+  padding: 20rpx 30rpx 30rpx 30rpx;
+  background: linear-gradient(to bottom, #b1c9f9, #f0f0f0);
+}
+.share{
+  height: 100rpx;
+}
+.avatar-wrap{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  background: #fff;
+  padding: 10rpx;
+  box-sizing: border-box;
+  margin-right: 24rpx;
+}
+.avatar{
+  width: 100%;
+  height: 100%;
+}
+.share-title{
+  font-size: 36rpx;
+  color: #000;
+  font-weight: 600;
+}
+.share-tip{
+  font-size: 26rpx;
+  line-height: 26rpx;
+  color: #000;
+}
+.share-dot{
+  margin: 0 8rpx;
+  color: #6d73cc;
+}
+.share-btn{
+  height: 100rpx;
+  color: #6d73cc;
+  background: transparent;
+  padding: 0;
+  font-size: 0;
+  margin: 0 !important;
+  width: max-content !important;
+  border: none !important;
+}
+.share-btn::after{
+  border: none;
+  height: 100% !important;
+  font-size: 0;
+}
+.share-icon{
+  font-size: 40rpx;
+  line-height: 40rpx;
+}
+.share-btn-text{
+  font-size: 26rpx;
+  line-height: 26rpx;
+}
+.contain{
+  margin-top: 20rpx;
+}
+.edit-list{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 24rpx;
+}
+.edit-item{
+  padding: 30rpx 24rpx;
+  border-radius: 20rpx;
+}
+.text-icon-wrap{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  color: #fff;
+  background: rgba(255, 255, 255, .4);
+}
+.text-icon{
+  font-size: 50rpx;
+}
+.edit-item-title{
+  font-size: 30rpx;
+  font-weight: 600;
+}
+.edit-item-tip{
+  font-size: 26rpx;
+  opacity: .6;
+  margin-top: 10rpx;
+  margin-bottom: 30rpx;
+}
+.edit-item-btn{
+  width: max-content;
+  font-size: 20rpx;
+  opacity: .6;
+  padding: 4rpx 14rpx;
+  background: rgba(255,255,255,1);
+  border-radius: 20rpx;
+}
+
+.template-wrap{
+  margin-top: 60rpx;
+}
+.template-wrap-title{
+  font-size: 36rpx;
+  font-weight: 600;
+}
+.template-wrap-more{
+  color: #6d73cc;
+  font-size: 24rpx;
+}
+.template-wrap-more-icon{
+  font-size: 24rpx;
+  margin-left: 4rpx;
+}
+
+.template-list{
+  margin-top: 30rpx;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24rpx;
+}
+.template-item{
+  padding: 30rpx 24rpx;
+  border-radius: 20rpx;
+  background: #fff;
+}
+.template-item-title{
+  font-size: 30rpx;
+  font-weight: 600;
+}
+.template-item-icon-wrap{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+}
+.template-item-tip{
+  font-size: 26rpx;
+  color: #b0b0b0;
+  margin-top: 10rpx;
+}

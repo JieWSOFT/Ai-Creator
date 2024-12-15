@@ -1,0 +1,69 @@
+<!--index.wxml-->
+<view>
+  <view class="share-wrap">
+    <view class="share flex-a-c justify-between box-border">
+      <view class="flex-a-c h-100">
+        <view class="avatar-wrap">
+          <image src="/assets/image/avatar.png" class="avatar" />
+        </view>
+        <view class="flex col-column justify-between h-100">
+          <view class="share-title">Hi，欢迎使用AI写作服务</view>
+          <view class="share-tip flex-a-c">
+            点击右上角<text class="iconfont icon-weixinxiaochengxudian share-dot"></text>添加到桌面适应更方便哦！</view>
+        </view>
+      </view>
+      <button open-type="share" class="share-btn flex-a-c col-column justify-between">
+        <text class="iconfont icon-fenxiang share-icon"></text>
+        <view class="share-btn-text">分享</view>
+      </button>
+    </view>
+  </view>
+  <view class="contain px-30 box-border">
+    <view class="edit-list">
+      <view 
+        wx:for="{{editList}}"
+        wx:key="index"
+        class="edit-item box-border flex-a-c justify-between"
+        style="background: {{item.bg}}"
+        data-item="{{item}}"
+        bind:tap="handleClick"
+      >
+        <view>
+          <view class="edit-item-title" style="color: {{item.color}}">{{item.title}}</view>
+          <view class="edit-item-tip" style="color: {{item.color}}">{{item.tip}}</view>
+          <view class="edit-item-btn flex-c" style="color: {{item.color}}">{{item.btn}}</view>
+        </view>
+        <view class="text-icon-wrap flex-c">
+          <text class="text-icon iconfont {{item.icon.font}}"></text>
+        </view>
+      </view>
+    </view>
+
+    <view class="template-wrap">
+      <view class="flex-a-c justify-between">
+        <view class="template-wrap-title">热门模板</view>
+        <view class="flex-a-c template-wrap-more">
+          <view>更多模板</view>
+          <text class="iconfont icon-gengduo template-wrap-more-icon"></text>
+        </view>
+      </view>
+      <view class="template-list">
+        <view 
+          wx:for="{{templateList}}" 
+          wx:key="index" 
+          class="template-item"
+          data-item="{{item}}"
+          bind:tap="handleClickEdit"
+        >
+          <view class="flex-a-c justify-between">
+            <view class="template-item-title">{{item.title}}</view>
+            <view class="template-item-icon-wrap flex-c" style="background: {{typeList[item.type].bgColor}}">
+              <text class="iconfont {{typeList[item.type].icon}}" style="color: {{typeList[item.type].textColor}}"></text>
+            </view>
+          </view>
+          <view class="template-item-tip">{{typeList[item.type].tip}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
