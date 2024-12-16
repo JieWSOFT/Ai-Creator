@@ -1,26 +1,26 @@
 <!--pages/edit/edit.wxml-->
 <view class="flex col-column justify-between box-border px-30 padding-30-area edit">
+	<view class="title">#{{typeList[editType].title}}#</view>
+	<view class="sub-title">{{typeList[editType].subTitle}}</view>
 	<view class="flex-1">
-		<view class="title">#{{typeList[editType].edit.title}}#</view>
-		<view class="sub-title">{{typeList[editType].edit.subTitle}}</view>
-		<view class="textarea flex col-column justify-between">
-			<view class="flex-1 overflow-hidden">
-				<van-field
-					value="{{ keyword }}"
-					placeholder="{{typeList[editType].edit.placeholder}}"
-					clearable
-					maxlength="{{typeList[editType].edit.maxlength}}"
-					extra-event-params
-					bind:change="onChange"
-					type="textarea"
-					autosize="{{autosize}}"
-					border="{{false}}"
-					clearable="{{false}}"
-				/>
+		<view wx:for="{{typeList[editType].edit}}" wx:key="order">
+			<view wx:if="{{item.type == 'textarea'}}">
+				<view class="textarea flex col-column justify-between">
+					<view class="flex-1 overflow-hidden">
+						<van-field model:value="{{ form[item.key]}}" placeholder="{{item.placeholder}}" clearable
+							maxlength="{{item.maxlength}}" extra-event-params bind:change="onChange" data-item="{{item}}"
+							type="textarea" autosize="{{item.autosize}}" border="{{false}}" clearable="{{false}}" />
+					</view>
+					<view class="textarea-btn flex-a-c justify-between">
+						<view class="textarea-btn-item" bind:tap="handleClear" data-item="{{item}}">清空</view>
+						<view class="text-limit">{{form[item.key].length}}/{{item.maxlength}}</view>
+					</view>
+				</view>
 			</view>
-			<view class="textarea-btn flex-a-c justify-between">
-				<view class="textarea-btn-item" bind:tap="handleClear">清空</view>
-				<view class="text-limit">{{keyword.length}}/{{typeList[editType].edit.maxlength}}</view>
+			<view wx:if="{{item.type == 'number'}}" class="number">
+				<van-field value="{{form[item.key]}}" title-width="150" label="{{item.label}}" type="number"
+					data-item="{{item}}" placeholder="{{item.placeholder}}" border="{{ false }}" bind:change="onChange"
+					input-align="right" />
 			</view>
 		</view>
 	</view>

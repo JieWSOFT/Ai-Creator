@@ -21,11 +21,11 @@ page{
 	margin-top: 20rpx;
 }
 .textarea{
-	height: 600rpx;
 	background: #fff;
 	margin-top: 16rpx;
 	border-radius: 20rpx;
 	overflow: hidden;
+	padding: 10rpx;
 }
 .textarea-btn{
 	padding: 20rpx;
@@ -57,4 +57,11 @@ page{
 }
 .text-limit{
 	color: #ccc;
+}
+
+.number{
+	margin-top: 16rpx;
+	border-radius: 20rpx;
+	overflow: hidden;
+	text-align: right;
 }

@@ -1,1 +1,26 @@
 /* pages/detail/detail.wxss */
+page{
+	min-height: 100vh;
+  display: flex;
+	flex-direction: column;
+	background: #f0f0f0;
+}
+.title{
+  background: #fff;
+	border-radius: 20rpx;
+	overflow: hidden;
+	padding: 30rpx;
+  margin: 20rpx;
+}
+.font-title{
+  font-size: 30rpx;
+  font-weight: bolder;
+}
+
+.content{
+  background: #fff;
+	border-radius: 20rpx;
+	overflow: hidden;
+	padding: 30rpx;
+  margin: 16rpx;
+}

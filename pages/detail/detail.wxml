@@ -1,2 +1,7 @@
 <!--pages/detail/detail.wxml-->
-<text>pages/detail/detail.wxml</text>
+<view class="title">
+  <view wx:for="{{titles}}" class="font-title">{{item}}</view>
+</view>
+<view class="content">
+
+</view>
