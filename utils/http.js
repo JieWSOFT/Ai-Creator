@@ -64,9 +64,9 @@ export const sse = (options) => {
     responseType: "arraybuffer",
     header: {
       "Authorization": `Bearer ${wx.getStorageSync('token')}`,
+      'Content-Type': 'text/plain',
     },
-    success() {
-    },
+    success() {},
     fail: function (error) {
       // 请求失败的操作
       reject(error)
@@ -75,10 +75,10 @@ export const sse = (options) => {
       // 请求完成的操作，无论成功或失败都会执行
       console.log('请求完成');
     }
-  })
-  // 监听服务端返回的数据
-  requestTask.onChunkReceived(res => {
-    console.log(res, res.data);
-    options['callback'](res)
+  }).onChunkReceived(res => {
+    const uint8Array = new Uint8Array(res.data);
+    let text = String.fromCharCode.apply(null, uint8Array);
+    text = decodeURIComponent(escape(text));
+    options['callback'](text)
   })
 }

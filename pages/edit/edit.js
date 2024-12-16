@@ -34,7 +34,6 @@ Page({
         })
       }
     })
-    console.log( wx.getSystemInfoSync())
   },
 
   /**

@@ -12,7 +12,8 @@ Page({
    */
   data: {
     editType: '',
-    titles: []
+    titles: [],
+    content: ''
   },
 
   /**
@@ -51,8 +52,10 @@ Page({
         topic: '我的母亲',
         length: 100
       },
-      callback(res) {
-        console.log('result', res)
+      callback: (res) => {
+        this.setData({
+          content: this.data.content += res
+        })
       }
     })
   },
