@@ -3,5 +3,5 @@
   <view wx:for="{{titles}}" class="font-title">{{item}}</view>
 </view>
 <view class="content">
-  {{content}}
+  <text>{{content}}</text>
 </view>

@@ -2,9 +2,6 @@
 import {
   typeList
 } from '../../utils/type'
-import {
-  sse
-} from '../../utils/http'
 Page({
 
   /**
@@ -45,19 +42,6 @@ Page({
   },
 
   async handleCreate(params) {
-    sse({
-      url: "/llm/essay/streaming",
-      methods: 'GET',
-      data: {
-        topic: '我的母亲',
-        length: 100
-      },
-      callback: (res) => {
-        this.setData({
-          content: this.data.content += res
-        })
-      }
-    })
   },
 
   /**
