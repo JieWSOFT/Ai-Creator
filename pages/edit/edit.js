@@ -87,10 +87,18 @@ Page({
   },
   onChange(e) {
     const {
-      key
+      key,
+      type,
+      max,
     } = e.target.dataset.item
+    let value = e.detail.value ?? e.detail
+    if (type == 'number' && max) {
+      if (Number(value) > max) {
+        value = max
+      }
+    }
     this.setData({
-      ['form.' + key]: e.detail.value ?? e.detail
+      ['form.' + key]: value
     })
   },
   // 创建

@@ -1,5 +1,8 @@
 // pages/detail/detail.js
 import {
+  get
+} from '../../utils/http'
+import {
   typeList
 } from '../../utils/type'
 Page({
@@ -42,8 +45,43 @@ Page({
   },
 
   async handleCreate(params) {
+    wx.showLoading({
+      title: 'AI生成中',
+      mask: true
+    })
+    const res = await get({
+      url: '/llm/essay/generate',
+      data: {
+        ...params,
+        topic: params.content
+      }
+    })
+    if (res.code == 200) {
+      this.setData({
+        content: res.data
+      })
+    }
+    wx.hideLoading()
   },
 
+  handleCopy() {
+    wx.setClipboardData({
+      data: this.data.content,
+      success: function () {
+        wx.showToast({
+          title: '复制成功'
+        })
+      }
+    })
+  },
+
+  handleGoHome() {
+    // 只能跳转到tabBar配置页面
+    wx.switchTab({
+      url: '/pages/index/index',
+    });
+
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

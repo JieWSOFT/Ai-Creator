@@ -31,6 +31,7 @@ export const typeList = {
 					}
 					return true
 				},
+				max: 2000,
 				key: 'length',
 				default: 300,
 				type: "number",

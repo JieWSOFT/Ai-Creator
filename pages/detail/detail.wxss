@@ -1,26 +1,68 @@
 /* pages/detail/detail.wxss */
-page{
-	min-height: 100vh;
-  display: flex;
+page {
+	height: 100vh;
+	display: flex;
 	flex-direction: column;
 	background: #f0f0f0;
 }
-.title{
-  background: #fff;
+
+.title {
+	background: #fff;
 	border-radius: 20rpx;
 	overflow: hidden;
 	padding: 30rpx;
-  margin: 20rpx;
-}
-.font-title{
-  font-size: 30rpx;
-  font-weight: bolder;
+	margin: 20rpx;
 }
 
-.content{
-  background: #fff;
+.font-title {
+	font-size: 30rpx;
+	font-weight: bolder;
+}
+
+.content {
+	background: #fff;
 	border-radius: 20rpx;
 	overflow: hidden;
 	padding: 30rpx;
-  margin: 16rpx;
+	margin: 16rpx;
+}
+
+.middle-wrap {
+	height: 100%;
+	padding-bottom: 150rpx;
+	overflow: auto
+}
+
+.button-wrap {
+	width: 100%;
+	position: absolute;
+	display: flex;
+	justify-content: space-between;
+	bottom: 20rpx;
+}
+
+.copy{
+	width: 300rpx;
+	margin-right: 20rpx;
+	text-align: center;
+	background: #f0dfa9;
+	height: 120rpx;
+	line-height: 120rpx;
+	border-radius: 60rpx;
+	color: #995e27;
+	font-weight: 600;
+	font-size: 26rpx; 
+}
+
+.home{
+	width: 120rpx;
+	margin-left: 20rpx;
+	text-align: center;
+	background: #c4d0f6;
+	height: 120rpx;
+	line-height: 120rpx;
+	border-radius: 60rpx;
+	color: white;
+	font-weight: 600;
+	font-size: 26rpx; 
 }

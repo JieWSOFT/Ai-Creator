@@ -7,7 +7,7 @@
 			<view wx:if="{{item.type == 'textarea'}}">
 				<view class="textarea flex col-column justify-between">
 					<view class="flex-1 overflow-hidden">
-						<van-field model:value="{{ form[item.key]}}" placeholder="{{item.placeholder}}" clearable
+						<van-field value="{{ form[item.key]}}" placeholder="{{item.placeholder}}" clearable
 							maxlength="{{item.maxlength}}" extra-event-params bind:change="onChange" data-item="{{item}}"
 							type="textarea" autosize="{{item.autosize}}" border="{{false}}" clearable="{{false}}" />
 					</view>
