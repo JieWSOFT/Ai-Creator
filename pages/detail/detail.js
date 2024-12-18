@@ -1,6 +1,8 @@
 // pages/detail/detail.js
 import {
-  get
+  get,
+  post,
+  put
 } from '../../utils/http'
 import {
   typeList
@@ -49,19 +51,25 @@ Page({
       title: 'AI生成中',
       mask: true
     })
-    const res = await get({
-      url: '/llm/essay/generate',
+    const res = await post({
+      url: '/llm/generate',
       data: {
-        ...params,
-        topic: params.content
+        type: this.data.editType,
+        params
       }
+    }).catch(() => {
+      wx.showToast({
+        icon: 'error',
+        title: "AI生成失败"
+      })
+    }).finally(() => {
+      wx.hideLoading()
     })
     if (res.code == 200) {
       this.setData({
         content: res.data
       })
     }
-    wx.hideLoading()
   },
 
   handleCopy() {

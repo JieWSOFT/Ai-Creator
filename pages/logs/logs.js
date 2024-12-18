@@ -1,4 +1,7 @@
 // logs.js
+const {
+  get
+} = require('../../utils/http.js')
 const util = require('../../utils/util.js')
 
 Page({
@@ -6,6 +9,10 @@ Page({
     logs: []
   },
   onLoad() {
+
+    get({
+      url: '/llm/generate/logs'
+    })
     this.setData({
       logs: (wx.getStorageSync('logs') || []).map(log => {
         return {
