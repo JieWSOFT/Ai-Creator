@@ -1,7 +1,7 @@
 <!--pages/detail/detail.wxml-->
 <view class="middle-wrap">
   <view class="title">
-    <view wx:for="{{titles}}" class="font-title">{{item}}</view>
+    <view wx:for="{{titles}}" wx:key="label" class="font-title">{{item.label}}：{{item.value}}</view>
   </view>
   <view class="content">
     <text>{{content}}</text>
@@ -9,9 +9,9 @@
 </view>
 <view class="button-wrap">
   <view class="home" bind:tap="handleGoHome">
-		<text class="iconfont icon-shandian create-icon"></text>
-	</view>
+    <text class="iconfont icon-shandian create-icon"></text>
+  </view>
   <view class="copy" bind:tap="handleCopy">
-		<text class="iconfont icon-shandian create-icon">复制文本</text>
-	</view>
+    <text class="iconfont icon-shandian create-icon">复制文本</text>
+  </view>
 </view>

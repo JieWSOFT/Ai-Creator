@@ -18,7 +18,7 @@ export const request = async (options) => {
       success(res) {
         switch (res.data.code) {
           case 200:
-            resolve(res.data)
+            resolve(res.data?.data)
             break;
           case 401:
             // 登录过期或者未登录
@@ -27,11 +27,10 @@ export const request = async (options) => {
               title: res.data.message,
               icon: 'error'
             });
-            reject();
+            reject(res.data);
         }
       },
       fail(err) {
-        console.log(err)
         reject(err)
       },
       complete() {

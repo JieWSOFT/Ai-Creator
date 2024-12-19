@@ -124,7 +124,7 @@ Page({
       url: '/pages/detail/detail',
       success: (res) => {
         res.eventChannel.emit('params', {
-          createParams: {
+          params: {
             ...(this.data.form || {}),
             editType: this.data.editType
           },

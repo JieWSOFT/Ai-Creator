@@ -1,8 +1,6 @@
 // pages/detail/detail.js
 import {
-  get,
   post,
-  put
 } from '../../utils/http'
 import {
   typeList
@@ -26,22 +24,30 @@ Page({
     eventChannel.on('params', (data) => {
       const {
         type,
-        createParams = {}
+        params = {}
       } = data
       if (type === 'create') {
         //设置title
         const _titles = []
-        typeList[createParams.editType]?.edit.forEach(item => {
-          _titles.push(`${item.label}：${createParams[item.key]}`)
+        typeList[params.editType]?.edit.forEach(item => {
+          _titles.push({
+            label: item.label,
+            value: params[item.key]
+          })
         })
         this.setData({
-          editType: createParams.editType,
+          editType: params.editType,
           titles: _titles
         })
         // 执行创建功能
-        this.handleCreate(createParams)
+        this.handleCreate(params)
       } else if (type === 'result') {
         // 生成记录过来的查询
+        const log = params
+        this.setData({
+          titles: log.titles,
+          content: log.content
+        })
       }
     })
   },
@@ -51,25 +57,23 @@ Page({
       title: 'AI生成中',
       mask: true
     })
-    const res = await post({
+    const content = await post({
       url: '/llm/generate',
       data: {
         type: this.data.editType,
         params
       }
-    }).catch(() => {
+    }).catch((e) => {
       wx.showToast({
         icon: 'error',
-        title: "AI生成失败"
+        title: e?.message || "AI生成失败"
       })
     }).finally(() => {
       wx.hideLoading()
     })
-    if (res.code == 200) {
-      this.setData({
-        content: res.data
-      })
-    }
+    this.setData({
+      content
+    })
   },
 
   handleCopy() {
