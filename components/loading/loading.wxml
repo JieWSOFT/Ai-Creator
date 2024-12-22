@@ -1,0 +1,5 @@
+<!--components/loading/loading.wxml-->
+<view class="flex-c loading" wx:if="{{loadingEnd || loading}}">
+  <view wx:if="{{loadingEnd}}" class="flex-c empty-text">{{bottomText}}</view>
+  <van-loading color="{{loadingColor}}" wx:if="{{loading}}" size="20">加载中...</van-loading>
+</view>

@@ -10,7 +10,7 @@
   ],
   "window": {
     "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "Weixin",
+    "navigationBarTitleText": "AI写作服务",
     "navigationBarBackgroundColor": "#b1c9f9"
   },
   "tabBar": {
@@ -36,6 +36,11 @@
         "selectedIconPath": "assets/image/tabbar/my-active.png"
       }
     ]
+  },
+  "usingComponents": {
+    "empty": "/components/empty/empty",
+    "loading": "/components/loading/loading",
+    "van-empty": "@vant/weapp/empty/index"
   },
   "componentFramework": "glass-easel",
   "sitemapLocation": "sitemap.json",

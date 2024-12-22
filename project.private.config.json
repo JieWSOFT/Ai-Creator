@@ -9,6 +9,13 @@
     "miniprogram": {
       "list": [
         {
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
+          "query": "userid=2",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "pages/logs/logs",
           "pathName": "pages/logs/logs",
           "query": "",
@@ -19,13 +26,6 @@
           "name": "pages/detail/detail",
           "pathName": "pages/detail/detail",
           "query": "topic=\"我的母亲\"&length=300",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "pages/index/index",
-          "pathName": "pages/index/index",
-          "query": "",
           "launchMode": "default",
           "scene": null
         },

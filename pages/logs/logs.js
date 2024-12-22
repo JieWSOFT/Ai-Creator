@@ -10,12 +10,14 @@ const util = require('../../utils/util.js')
 Page({
   data: {
     logs: [],
-    typeList
+    typeList,
+    isEmpty: false,
+    isLoading: true
   },
   onLoad() {
     get({
       url: '/llm/generate/logs'
-    }).then((logs) => {
+    }).then(({data:logs}) => {
       //处理logs 解析
       logs = logs.map(log => {
         let {
@@ -43,8 +45,14 @@ Page({
           titles,
         }
       })
+      if (!logs.length) {
+        this.setData({
+          isEmpty: true
+        })
+      }
       this.setData({
-        logs
+        logs,
+        isLoading: false
       })
     })
   },
@@ -59,5 +67,5 @@ Page({
         })
       }
     })
-  }
+  },
 })

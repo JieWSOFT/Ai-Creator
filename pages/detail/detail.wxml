@@ -9,7 +9,7 @@
 </view>
 <view class="button-wrap">
   <view class="home" bind:tap="handleGoHome">
-    <text class="iconfont icon-shandian create-icon"></text>
+    <text class="iconfont icon-shouye create-icon"></text>
   </view>
   <view class="copy" bind:tap="handleCopy">
     <text class="iconfont icon-shandian create-icon">复制文本</text>

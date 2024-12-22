@@ -1,4 +1,4 @@
-const API_PREFIX = "https://testapi.tymd.fun:11443/api/v1"
+const API_PREFIX = "http://192.168.2.197:3332/api/v1"
 
 export const request = async (options) => {
   if (options.loading) {
@@ -18,7 +18,7 @@ export const request = async (options) => {
       success(res) {
         switch (res.data.code) {
           case 200:
-            resolve(res.data?.data)
+            resolve(res.data)
             break;
           case 401:
             // 登录过期或者未登录

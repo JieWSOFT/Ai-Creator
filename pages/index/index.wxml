@@ -3,8 +3,8 @@
   <view class="share-wrap">
     <view class="share flex-a-c justify-between box-border">
       <view class="flex-a-c h-100">
-        <view class="avatar-wrap">
-          <image src="/assets/image/avatar.png" class="avatar" />
+        <view class="avatar-wrap flex-c">
+          <image src="/assets/image/avatar.jpg" class="avatar" />
         </view>
         <view class="flex col-column justify-between h-100">
           <view class="share-title">Hi，欢迎使用AI写作服务</view>
@@ -23,19 +23,17 @@
       <view 
         wx:for="{{editList}}"
         wx:key="index"
-        class="edit-item box-border flex-a-c justify-between"
+        class="edit-item box-border"
         style="background: {{item.bg}}"
         data-item="{{item}}"
-        bind:tap="handleClick"
+        bind:tap="handleClickEdit"
       >
-        <view>
-          <view class="edit-item-title" style="color: {{item.color}}">{{item.title}}</view>
-          <view class="edit-item-tip" style="color: {{item.color}}">{{item.tip}}</view>
-          <view class="edit-item-btn flex-c" style="color: {{item.color}}">{{item.btn}}</view>
-        </view>
         <view class="text-icon-wrap flex-c">
-          <text class="text-icon iconfont {{item.icon.font}}"></text>
+          <text class="iconfont {{typeList[item.type].icon}}"></text>
         </view>
+        <view class="edit-item-title" style="color: {{item.color}}">{{item.title}}</view>
+        <view class="edit-item-tip" style="color: {{item.color}}">{{typeList[item.type].tip}}</view>
+        <view class="edit-item-btn flex-c" style="color: {{item.color}}">{{item.btn}}</view>
       </view>
     </view>
 

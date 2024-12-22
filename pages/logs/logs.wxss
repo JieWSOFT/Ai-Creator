@@ -49,3 +49,17 @@ page {
 /* .log-item:last-child {
   padding-bottom: env(safe-area-inset-bottom);
 } */
+
+.btn{
+  background: #c4d0f6;
+  width: 400rpx;
+	height: 100rpx;
+	border-radius: 60rpx;
+	color: #fff;
+	font-weight: 600;
+	font-size: 36rpx;
+}
+.create-icon{
+	font-size: 40rpx;
+	margin-left: 10rpx;
+}
