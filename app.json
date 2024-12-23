@@ -24,12 +24,6 @@
         "selectedIconPath": "assets/image/tabbar/home-active.png"
       },
       {
-        "pagePath": "pages/template/template",
-        "text": "模版",
-        "iconPath": "assets/image/tabbar/template.png",
-        "selectedIconPath": "assets/image/tabbar/template-active.png"
-      },
-      {
         "pagePath": "pages/my/my",
         "text": "个人中心",
         "iconPath": "assets/image/tabbar/my.png",

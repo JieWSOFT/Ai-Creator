@@ -1,7 +1,9 @@
 {
   "usingComponents": {
     "van-button": "@vant/weapp/button/index",
-    "van-field": "@vant/weapp/field/index"
+    "van-field": "@vant/weapp/field/index",
+    "van-picker": "@vant/weapp/picker/index",
+    "van-popup": "@vant/weapp/popup/index"
   },
   "navigationBarTitleText": "AI写作服务"
 }

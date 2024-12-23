@@ -1,67 +1,94 @@
 /* pages/edit/edit.wxss */
-page{
+page {
 	min-height: 100vh;
-  display: flex;
+	display: flex;
 	flex-direction: column;
 	background: #f0f0f0;
 }
-.edit{
+
+.edit {
 	height: 100vh;
+	overflow: auto;
+	padding: 0 30rpx 190rpx 30rpx;
 }
-.px-30{
-	padding: 0 30rpx;
-}
-.title{
+
+
+.title {
 	padding-top: 20rpx;
 	font-size: 36rpx;
 }
-.sub-title{
+
+.sub-title {
 	font-size: 24rpx;
-	color: rgba(0,0,0,.5);
+	color: rgba(0, 0, 0, .5);
 	margin-top: 20rpx;
 }
-.textarea{
+
+.textarea {
 	background: #fff;
 	margin-top: 16rpx;
 	border-radius: 20rpx;
 	overflow: hidden;
 	padding: 10rpx;
 }
-.textarea-btn{
+
+.textarea-btn {
 	padding: 20rpx;
 	gap: 20rpx;
 }
-.textarea-btn-item{
+
+.textarea-btn-item {
 	font-size: 24rpx;
 	padding: 16rpx 20rpx;
 	border: 2rpx solid #c4d0f6;
 	color: #c4d0f6;
 	border-radius: 50rpx;
 }
-.textarea-btn-item1{
+
+.textarea-btn-item1 {
 	background: #c4d0f6;
 	color: #fff;
 }
 
-.create{
+.create {
 	background: #f0dfa9;
+	position: absolute;
+	width: 95%;
+	bottom: 20rpx;
 	height: 120rpx;
 	border-radius: 60rpx;
 	color: #995e27;
 	font-weight: 600;
 	font-size: 36rpx;
 }
-.create-icon{
+
+.create-icon {
 	font-size: 40rpx;
 	margin-right: 4rpx;
 }
-.text-limit{
+
+.text-limit {
 	color: #ccc;
 }
 
-.number{
+.number {
 	margin-top: 16rpx;
 	border-radius: 20rpx;
 	overflow: hidden;
 	text-align: right;
+}
+
+.select {
+	margin-top: 16rpx;
+	border-radius: 20rpx;
+	padding: 30rpx 30rpx 30rpx 94rpx;
+	display: flex;
+	justify-content: space-between;
+	overflow: hidden;
+	text-align: right;
+	background-color: #fff;
+	color: #646566;
+	font-size:30rpx;
+	color: rgba(0, 0, 0, .7);
+	margin-top: 20rpx;
 }

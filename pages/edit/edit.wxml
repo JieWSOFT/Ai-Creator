@@ -1,7 +1,7 @@
 <!--pages/edit/edit.wxml-->
-<view class="flex col-column justify-between box-border px-30 padding-30-area edit">
+<view class="flex col-column justify-between box-border edit">
 	<view class="title">#{{typeList[editType].title}}#</view>
-	<view class="sub-title">{{typeList[editType].subTitle}}</view>
+	<view class="sub-title">{{typeList[editType].tip}}</view>
 	<view class="flex-1">
 		<view wx:for="{{typeList[editType].edit}}" wx:key="order">
 			<view wx:if="{{item.type == 'textarea'}}">
@@ -21,6 +21,20 @@
 				<van-field value="{{form[item.key]}}" title-width="150" label="{{item.label}}" type="number"
 					data-item="{{item}}" placeholder="{{item.placeholder}}" border="{{ false }}" bind:change="onChange"
 					input-align="right" />
+			</view>
+			<view wx:if="{{item.type == 'field'}}" class="number">
+				<van-field value="{{form[item.key]}}" title-width="40" label="{{item.label}}" data-item="{{item}}"
+					placeholder="{{item.placeholder}}" border="{{ false }}" bind:change="onChange" input-align="right" />
+			</view>
+			<view wx:if="{{item.type == 'select'}}">
+				<van-popup show="{{showPicker}}" position="bottom" bind:close="onClosePicker">
+					<van-picker show-toolbar title="{{item.label}}" columns="{{item.columns}}" bind:confirm="onConfirm"
+						data-item="{{item}}" bind:cancel="onClosePicker" />
+				</van-popup>
+				<view bindtap="showPickerPopup" class="select">
+					<text>{{item.label}}</text>
+					<text style="color: black">{{form[item.key]}}</text>
+				</view>
 			</view>
 		</view>
 	</view>

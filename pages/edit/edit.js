@@ -101,6 +101,33 @@ Page({
       ['form.' + key]: value
     })
   },
+  // 打开 Picker 弹出层
+  showPickerPopup() {
+    this.setData({
+      showPicker: true
+    });
+  },
+
+  // 关闭 Picker 弹出层
+  onClosePicker() {
+    this.setData({
+      showPicker: false
+    });
+  },
+
+  // 确认选择
+  onConfirm(event) {
+    const {
+      key,
+    } = event.target.dataset.item
+    const {
+      value
+    } = event.detail;
+    this.setData({
+      showPicker: false, // 关闭弹窗
+      [`form.` + key]: value
+    });
+  },
   // 创建
   handleCreate() {
     //验证参数
@@ -132,5 +159,5 @@ Page({
         })
       }
     })
-  }
+  },
 })
