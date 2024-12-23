@@ -42,7 +42,9 @@ App({
     wx.login({
       success: async (res) => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
-        const { code, data: token } = await createToken(res.code)
+        const {
+          data: token
+        } = await createToken(res.code)
         this.globalData.token = token
         wx.setStorageSync('token', token);
 
@@ -53,7 +55,9 @@ App({
   },
   globalData,
   async handleGetUserInfo() {
-    const {data: user} = await getUserInfo()
+    const {
+      data: user
+    } = await getUserInfo()
     this.globalData.userInfo.username = user.username
     this.globalData.userInfo.id = user.id
   },
