@@ -19,7 +19,7 @@ export const request = async (options) => {
       success(res) {
         switch (res.data.code) {
           case 200:
-            resolve(res.data?.data)
+            resolve(res.data)
             break;
           case 401:
             // 登录过期或者未登录

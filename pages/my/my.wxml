@@ -1,1 +1,30 @@
 <!--pages/my/my.wxml-->
+<view>
+  <view class="my-wrap flex-c col-column">
+    <view class="avatar-wrap">
+      <image src="/assets/image/avatar.jpg" class="avatar" />
+    </view>
+    <view class="name">{{userInfo.username}}</view>
+  </view>
+  <view class="list-wrap">
+    <view class="list">
+      <view wx:for="{{list}}" wx:key="index" class="list-item flex-a-c justify-between" data-item="{{item}}" bind:tap="handleClick">
+        <view>{{item.label}}</view>
+        <block wx:if="{{item.icon}}">
+          <button open-type="share" wx:if="{{item.type === 'share'}}" class="item-icon share-btn">
+            <text class="iconfont {{item.icon}}"></text>
+          </button>
+          <view wx:else class="item-icon">
+            <text class="iconfont {{item.icon}}"></text>
+          </view>
+        </block>
+        <view wx:if="{{item.type === 'code'}}">
+          <view class="flex-a-c">
+            <view class="count">{{count}}次</view>
+            <!-- <button open-type="share" class="add">添加</button> -->
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

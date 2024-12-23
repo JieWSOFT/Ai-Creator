@@ -1,0 +1,7 @@
+<!--components/empty/empty.wxml-->
+<van-empty 
+  image="https://img.yzcdn.cn/vant/custom-empty-image.png" 
+  description="{{desc}}"
+>
+  <slot />
+</van-empty>

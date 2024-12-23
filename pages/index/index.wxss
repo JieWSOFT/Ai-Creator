@@ -31,8 +31,9 @@ page {
   margin-right: 24rpx;
 }
 .avatar{
-  width: 100%;
-  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
 }
 .share-title{
   font-size: 36rpx;
@@ -82,13 +83,17 @@ page {
 .edit-item{
   padding: 30rpx 24rpx;
   border-radius: 20rpx;
+  position: relative;
 }
 .text-icon-wrap{
-  width: 100rpx;
-  height: 100rpx;
+  width: 60rpx;
+  height: 60rpx;
   border-radius: 50%;
   color: #fff;
   background: rgba(255, 255, 255, .4);
+  position: absolute;
+  top: 20rpx;
+  right: 20rpx;
 }
 .text-icon{
   font-size: 50rpx;
@@ -100,7 +105,7 @@ page {
 .edit-item-tip{
   font-size: 26rpx;
   opacity: .6;
-  margin-top: 10rpx;
+  margin-top: 20rpx;
   margin-bottom: 30rpx;
 }
 .edit-item-btn{

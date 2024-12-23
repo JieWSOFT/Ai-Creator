@@ -1,7 +1,10 @@
 <!--logs.wxml-->
-<scroll-view class="scrollarea" scroll-y type="list">
-  <block wx:for="{{logs}}" wx:key="timeStamp" wx:for-item="log">
-    <view class="log-item" bind:tap="onDetail" data-item="{{log}}">
+<scroll-view class="scrollarea" scroll-y>
+  
+  <empty wx:if="{{isEmpty}}" desc="暂无写作记录">
+  </empty>
+  <block wx:else>
+    <view wx:for="{{logs}}" wx:key="timeStamp" wx:for-item="log" class="log-item" bind:tap="onDetail" data-item="{{log}}">
       <text class="log-title" wx:for="{{log.titles}}" wx:key="label">{{item.label}}：{{item.value}}</text>
       <view class="log-content">
         {{log.content}}

@@ -1,1 +1,94 @@
 /* pages/my/my.wxss */
+page{
+  /* background: #f3f8f8; */
+  box-sizing: border-box;
+  background-color: #f0f0f0;
+}
+.my-wrap{
+  
+  padding: 60rpx 0;
+  box-sizing: border-box;
+  box-sizing: border-box;background: linear-gradient(to bottom, #b1c9f9, #f0f0f0);
+}
+.avatar-wrap{
+  width: 100rpx;
+  height: 100rpx;
+}
+.avatar{
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 50%;
+  background: #fff;
+  padding: 10rpx;
+  box-sizing: border-box;
+  object-fit: cover;
+}
+.name{
+  font-size: 36rpx;
+  color: #000;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 20rpx;
+}
+.list-wrap{
+  padding: 0 30rpx;
+}
+.list{
+  background: #fff;
+  border-radius: 40rpx;
+  padding: 0 40rpx;
+}
+.list-item{
+  padding: 40rpx 0;
+  font-size: 34rpx;
+  border-bottom: 1px solid rgba(0, 0, 0, .05);
+}
+.list-item:last-child{
+  border: 0;
+}
+.item-icon{
+  width: max-content;
+  padding-left: 20rpx;
+}
+.iconfont{
+  color: #9091a1;
+  font-size: 30rpx;
+  font-weight: 600;
+}
+.count{
+  color: #9091a1;
+  /* margin-right: 20rpx; */
+}
+/* .add{
+  color: #abcc56;
+} */
+.add{
+  color: #6d73cc;
+  padding: 10rpx 20rpx;
+  background-color: #fff;
+  font-size: 30rpx;
+  line-height: 34rpx;
+  margin: 0 !important;
+  height: max-content !important;
+  width: max-content !important;
+  border: 1px solid #6d73cc;
+}
+.add::after{
+  border: none;
+  height: 100% !important;
+  font-size: 0;
+}
+.share-btn{
+  padding: 0 !important;
+  margin: 0 !important;
+  font-size: 30rpx;
+  line-height: 34rpx;
+  background-color: #fff;
+  height: max-content !important;
+  width: max-content !important;
+}
+.share-btn::after{
+  border: none;
+  height: 100% !important;
+  font-size: 0;
+}

@@ -1,0 +1,6 @@
+/* components/loading/loading.wxss */
+.empty-text {
+  color: rgba(48, 57, 81, 0.6);
+  font-size: 24rpx;
+  line-height: 32rpx;
+}

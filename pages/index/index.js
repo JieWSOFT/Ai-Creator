@@ -1,5 +1,6 @@
 // index.js
 import { typeList } from '../../utils/type'
+import { postLlmAvailable } from '../../apis/user'
 const app = getApp()
 Page({
   data: {
@@ -12,8 +13,8 @@ Page({
     canIUseNicknameComp: wx.canIUse('input.type.nickname'),
     editList: [
       {
-        title: '短文写作',
-        tip: '1500字以内',
+        type: 'xiaohongshu',
+        title: '小红书文案',
         btn: '点击创建',
         bg: '#bccef7',
         color: '#3d44ac',
@@ -23,8 +24,8 @@ Page({
         }
       },
       {
-        title: '长文写作',
-        tip: '1500字以上',
+        type: 'publicAccount',
+        title: '公众号文章',
         btn: '点击创建',
         bg: '#f0da9d',
         color: '#92602a',
@@ -45,16 +46,16 @@ Page({
         title: '写诗'
       },
       {
-        type: 'xiaohongshu',
-        title: '小红书文案'
-      },
-      {
-        type: 'publicAccount',
-        title: '公众号文章'
+        type: 'friendCircle',
+        title: '朋友圈文案'
       },
       {
         type: 'workSummary',
         title: '工作总结'
+      },
+      {
+        type: 'couplet',
+        title: '对联'
       },
       {
         type: 'name',
@@ -62,18 +63,24 @@ Page({
       },
     ]
   },
-  handleClick(e) {
-    const { item } = e.currentTarget.dataset
-  },
   handleClickEdit(e) {
     const { item } = e.currentTarget.dataset
     wx.navigateTo({
       url: `/pages/edit/edit?type=${item.type}`,
     })
   },
+  handelPostLlmAvailable(params) {
+    postLlmAvailable(params)
+  },
   onLoadLogin(options){
     // 已经登录，可以走依赖token的逻辑了
     console.log('首页的onLoadLogin',options,`{"token":"${app.globalData.token}"}`);
+    if (options.userid) {
+      this.handelPostLlmAvailable({
+        userId: options.userid,
+        type: 'share'
+      })
+    }
   },
   onShowLogin(options){
     // 每次显示页面时都会执行的逻辑在这里
@@ -97,8 +104,8 @@ Page({
   onShareAppMessage() {
     // 分享记录的接口
     return {
-      title: '分享好友',
-      path: '/pages/index/index'
+      title: 'AI写作服务',
+      path: `/pages/index/index?userid=${app.globalData.userInfo.id}`
     };
   }
 })

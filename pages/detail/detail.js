@@ -57,7 +57,7 @@ Page({
       title: 'AI生成中',
       mask: true
     })
-    const content = await post({
+    const {data} = await post({
       url: '/llm/generate',
       data: {
         type: this.data.editType,
@@ -72,7 +72,7 @@ Page({
       wx.hideLoading()
     })
     this.setData({
-      content
+      content:data
     })
   },
 
