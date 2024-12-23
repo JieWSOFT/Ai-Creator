@@ -41,8 +41,8 @@
       <view class="flex-a-c justify-between">
         <view class="template-wrap-title">热门模板</view>
         <view class="flex-a-c template-wrap-more">
-          <view>更多模板</view>
-          <text class="iconfont icon-gengduo template-wrap-more-icon"></text>
+          <!-- <view>更多模板</view> -->
+          <!-- <text class="iconfont icon-gengduo template-wrap-more-icon"></text> -->
         </view>
       </view>
       <view class="template-list">
